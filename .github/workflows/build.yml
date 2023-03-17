@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-      - name: Dpendencies
+      - name: Dependencies
         run: npm ci
       - name: Build
         run: npm run build
