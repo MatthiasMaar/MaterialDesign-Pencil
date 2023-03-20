@@ -27,7 +27,7 @@
     "build": "rimraf dist && rimraf MaterialDesign-Pencil-*.zip && ts-node build.ts"
   },
   "devDependencies": {
-    "@mdi/svg": "7.1.96",
+    "@mdi/svg": "7.2.96",
     "@types/archiver": "^5.3.2",
     "@types/node": "^18.15.3",
     "@types/sharp": "^0.31.1",
