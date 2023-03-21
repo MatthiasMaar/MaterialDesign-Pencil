@@ -24,7 +24,8 @@
   "main": "build.ts",
   "scripts": {
     "up": "npx taze -I major",
-    "build": "rimraf dist && rimraf MaterialDesign-Pencil-*.zip && ts-node build.ts"
+    "build": "rimraf dist && rimraf MaterialDesign-Pencil-*.zip && ts-node build.ts",
+    "tag": "git tag ${npm_package_version}"
   },
   "devDependencies": {
     "@mdi/svg": "7.2.96",
