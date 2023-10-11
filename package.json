@@ -1,6 +1,6 @@
 {
   "name": "material-design-pencil",
-  "version": "7.2.96",
+  "version": "7.3.67",
   "description": "Material Design Icons for Pencil",
   "license": "MIT",
   "keywords": [
@@ -29,13 +29,13 @@
   },
   "devDependencies": {
     "@mdi/svg": "7.3.67",
-    "@types/archiver": "^5.3.2",
-    "@types/node": "^18.15.5",
-    "@types/sharp": "^0.31.1",
-    "archiver": "^5.3.1",
-    "rimraf": "^4.4.0",
-    "sharp": "^0.31.3",
-    "svgson": "^5.2.1",
+    "@types/archiver": "^5.3.3",
+    "@types/node": "^20.8.4",
+    "@types/sharp": "^0.32.0",
+    "archiver": "^6.0.1",
+    "rimraf": "^5.0.5",
+    "sharp": "^0.32.6",
+    "svgson": "^5.3.1",
     "ts-node": "^10.9.1"
   },
   "prettier": {
