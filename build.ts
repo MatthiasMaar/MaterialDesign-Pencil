@@ -112,7 +112,7 @@ const xml = `<Shapes
   xmlns:xlink="http://www.w3.org/1999/xlink"
   id="matthiasmaar-mat-icons"
   displayName="Material Design Icons"
-  description="All 7,100+ Material Design Icons from https://pictogrammers.com/library/mdi as a Pencil stencil collection. The icon collection is released by the Pictogrammers icon group under the Apache 2.0 license, while some of the icons are redistributed under the Apache 2.0 license. All other icons are either redistributed under their respective licenses or are distributed under the Apache 2.0 license."
+  description="All 7,400+ Material Design Icons from https://pictogrammers.com/library/mdi as a Pencil stencil collection. The icon collection is released by the Pictogrammers icon group under the Apache 2.0 license, while some of the icons are redistributed under the Apache 2.0 license. All other icons are either redistributed under their respective licenses or are distributed under the Apache 2.0 license."
   author="Matthias Maar"
   url="https://github.com/MatthiasMaar/MaterialDesign-Pencil">
   <Properties>

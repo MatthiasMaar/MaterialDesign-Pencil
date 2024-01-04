@@ -1,6 +1,6 @@
 # Material Design Icons for Pencil
 
-All 7,100+ icons from [Material Design Icons](https://pictogrammers.com/library/mdi) as a [Pencil](https://pencil.evolus.vn) stencil collection.
+All 7,400+ icons from [Material Design Icons](https://pictogrammers.com/library/mdi) as a [Pencil](https://pencil.evolus.vn) stencil collection.
 
 Contains original SVG and 24px PNG variants.
 
