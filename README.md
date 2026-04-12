@@ -20,11 +20,11 @@ Follow the uninstall and installation steps above.
 ## Custom Build
 
 - Clone this repo.
-- Install the dependencies and run the build script (e.g. using `npm`):
+- Install the dependencies and run the build script using `bun`:
 
 ```
-npm install
-npm run build
+bun install
+bun run build
 ```
 
 This will

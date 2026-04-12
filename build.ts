@@ -55,19 +55,19 @@ files.forEach(file => {
   if (path.extname(file).toLowerCase() === '.svg') {
     const svg = svgson.parseSync(fs.readFileSync(path.join(srcPath, file), 'utf-8'), {
       transformNode: node => {
-        if (node.name === 'svg' && node.attributes.viewBox) {
-          const viewBox = node.attributes.viewBox.split(' ');
+        if (node.name === 'svg' && node.attributes['viewBox']) {
+          const viewBox = node.attributes['viewBox'].split(' ');
 
-          if (viewBox.length === 4 && !(node.attributes.width || node.attributes.height)) {
-            if (!node.attributes.width) {
-              node.attributes.width = viewBox[2];
+          if (viewBox.length === 4 && !(node.attributes['width'] || node.attributes['height'])) {
+            if (!node.attributes['width'] && viewBox[2]) {
+              node.attributes['width'] = viewBox[2];
             }
-            if (!node.attributes.height) {
-              node.attributes.height = viewBox[3];
+            if (!node.attributes['height'] && viewBox[3]) {
+              node.attributes['height'] = viewBox[3];
             }
           }
 
-          delete node.attributes.viewBox;
+          delete node.attributes['viewBox'];
         }
 
         return node;
@@ -76,21 +76,22 @@ files.forEach(file => {
 
     const pngName = path.basename(file, path.extname(file)) + '.png';
 
+    const id = svg.attributes['id'] ?? '';
     const shapeTemplateMapping = {
-      __id__: svg.attributes.id,
-      __displayName__: svg.attributes.id
+      __id__: id,
+      __displayName__: id
         .split('-')
-        .slice(svg.attributes.id.startsWith('mdi-') ? 1 : 0)
+        .slice(id.startsWith('mdi-') ? 1 : 0)
         .map(s => s.charAt(0).toUpperCase() + s.substring(1))
         .join(' '),
       __icon__: `icons/${pngName}`,
-      __width__: svg.attributes.width,
-      __height__: svg.attributes.height,
+      __width__: svg.attributes['width'] ?? '0',
+      __height__: svg.attributes['height'] ?? '0',
       __svg__: svg.children.map(child => svgson.stringify(child)).join('\r\n        ')
     } as Record<string, string>;
     shapes.push(
       shapeTemplate.replace(/__id__|__displayName__|__icon__|__width__|__height__|__svg__/gi, match => {
-        return shapeTemplateMapping[match];
+        return shapeTemplateMapping[match] ?? '';
       })
     );
 
@@ -131,7 +132,7 @@ fs.writeFileSync(path.join(distPath, 'Definition.xml'), xml);
  */
 
 const output = fs.createWriteStream(
-  path.join(__dirname, `MaterialDesign-Pencil-${process.env.npm_package_version}.zip`)
+  path.join(__dirname, `MaterialDesign-Pencil-${process.env['npm_package_version']}.zip`)
 );
 const archive = archiver('zip', {
   zlib: { level: 9 }
