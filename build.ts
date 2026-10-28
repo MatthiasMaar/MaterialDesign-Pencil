@@ -1,4 +1,4 @@
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 import * as fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
@@ -134,9 +134,7 @@ fs.writeFileSync(path.join(distPath, 'Definition.xml'), xml);
 const output = fs.createWriteStream(
   path.join(__dirname, `MaterialDesign-Pencil-${process.env['npm_package_version']}.zip`)
 );
-const archive = archiver('zip', {
-  zlib: { level: 9 }
-});
+const archive = new ZipArchive({ zlib: { level: 9 } });
 archive.pipe(output);
 archive.directory(distPath, false);
 archive.finalize();
